@@ -8,13 +8,23 @@
 
 package com.techvista.mvvmtest.api
 
-import com.techvista.mvvmtest.models.ProductListItem
+import com.techvista.mvvmtest.models.Login.Data
+import com.techvista.mvvmtest.models.Login.loginRequest
+import com.techvista.mvvmtest.models.Login.loginResponse
 import retrofit2.Response
-import retrofit2.http.GET
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface API {
 
-    @GET("/products")
-    suspend fun getProducts() : Response<List<ProductListItem>>
+//    @GET("/products")
+//    suspend fun getProducts() : Response<List<ProductListItem>>
+
+
+    @POST("login")
+    suspend fun login(
+        @Body request: loginRequest
+    ):  Response<loginResponse>
+
 
 }

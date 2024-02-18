@@ -21,7 +21,8 @@ class RetrofitClientApplication : Application() {
     lateinit var api: API
     lateinit var repository: Repository
     private var retrofit: Retrofit? = null
-     var Base_Url="https://fakestoreapi.com/"
+//     var Base_Url="https://fakestoreapi.com/"
+     var Base_Url="https://devclientserver.com/geauxchef/api/v1/chef/"
 
     override fun onCreate() {
         super.onCreate()

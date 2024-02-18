@@ -12,6 +12,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.techvista.mvvmtest.models.Login.Data
+import com.techvista.mvvmtest.models.Login.loginRequest
+import com.techvista.mvvmtest.models.Login.loginResponse
 import com.techvista.mvvmtest.models.ProductListItem
 import com.techvista.mvvmtest.repository.Repository
 import com.techvista.mvvmtest.utils.NetworkResult
@@ -23,10 +26,24 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     val products: LiveData<NetworkResult<List<ProductListItem>>>
     get() = _products
 
-    fun getProducts(){
+
+    private val _login= MutableLiveData<NetworkResult<loginResponse>>()
+    val login: LiveData<NetworkResult<loginResponse>>
+        get() = _login
+
+
+
+
+//    fun getProducts(){
+//        viewModelScope.launch {
+//            val result = repository.getProducts()
+//            _products.postValue(result)
+//        }
+//    }
+    fun getlogin(loginRequest: loginRequest){
         viewModelScope.launch {
-            val result = repository.getProducts()
-            _products.postValue(result)
+            val result = repository.getLogin(loginRequest)
+            _login.postValue(result)
         }
     }
 }
