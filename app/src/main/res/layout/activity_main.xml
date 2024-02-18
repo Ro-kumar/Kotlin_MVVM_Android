@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Rohan Programmer on 18/02/24, 6:42 pm
+  ~  * Copyright (c) 2024 . All rights reserved.
+  ~  * Last modified 18/02/24, 6:42 pm
+  ~  */
+  -->
+
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/productList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
